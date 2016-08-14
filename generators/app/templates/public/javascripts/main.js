@@ -1,0 +1,3 @@
+(function () {
+    // Global Client Side JS Code Here...
+})();

@@ -1,0 +1,126 @@
+.navbar {
+  border-radius: 0px;
+}
+.navbar .dropdown-toggle {
+  font-size: 20px;
+}
+.footer {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  height: 70px;
+  margin: 30px auto;
+  text-align: center;
+}
+.footer a {
+  display: block;
+  margin: 25px auto;
+  text-decoration: none;
+}
+.login .form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.login .form-signin .form-signin-heading,
+.login .form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.login .form-signin .checkbox {
+  font-weight: normal;
+}
+.login .form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.login .form-signin .form-control:focus {
+  z-index: 2;
+}
+.login .form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.login .form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.login .account-wall {
+  margin-top: 20px;
+  padding: 40px 0px 20px 0px;
+  background-color: #f7f7f7;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.login .login-title {
+  color: #555;
+  font-size: 18px;
+  font-weight: 400;
+  display: block;
+}
+.content .component {
+  padding: 0 0 20px;
+}
+.content .component .component-form .form-group {
+  padding-right: 10px;
+}
+.content .component .form-inline {
+  padding: 0 0 10px;
+}
+.content .component .tag-label {
+  color: #555;
+  display: block;
+  font-weight: bold;
+}
+.pointer {
+  cursor: pointer;
+}
+.fa {
+  display: block;
+  margin: 50px auto;
+}
+.fa-3x {
+  width: 70px;
+  height: 70px;
+}
+.fa-spin {
+  animation-name: rotate;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.tags-collapse-btn {
+  margin-top: 50px;
+  width: 50px;
+  height: 35px;
+  background-color: white;
+  border: 1px solid gray;
+  outline: none;
+  margin-right: 20px;
+}
+.tags-plus:before {
+  content: '\2795';
+}
+.tags-minus:before {
+  content: '\2796';
+}
+.page-header {
+  margin-top: -10px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid #eee;
+  display: inline-block;
+}
