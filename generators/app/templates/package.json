@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "start:dev": "nodemon ./bin/www & npm run watch",
+    "debug": "FORCE_HTTPS=true node --inspect bin/www",
+    "start:dev": "FORCE_HTTPS=true nodemon ./bin/www & npm run watch",
     "stop": "killall node",
     "watch": "npm run watch-css & livereload ./public -e 'css' & npm run watch-react & npm run watch:js",
     "watch-css": "catw -c 'lessc -' './public/stylesheets/*.less' -o ./public/stylesheets/bundle.css -v",

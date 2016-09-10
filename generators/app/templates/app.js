@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var handlebars   = require('express-handlebars');
 var app = express();
 
-var homepage = require('./routes/homepage');
+var homepage = require('./routes/home');
 var login = require('./routes/login');
 var logout = require('./routes/logout');
 

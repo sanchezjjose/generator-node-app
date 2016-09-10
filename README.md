@@ -1,6 +1,6 @@
-# NPM Module Generator
+# Node Application Generator
 
-Scaffolds an NPM Module that supports ES6, and uses eslint, istanbul and mocha.
+Scaffolds a Node Application that supports ES6, ReactJS, and uses eslint, istanbul and mocha out of the box, with some simple to use npm scripts.
 
 ## Getting started
 Make sure you have [yeoman](https://github.com/yeoman/yo) installed, simply run anywhere:
@@ -12,7 +12,7 @@ Install the generator:
 
 You can not run this command with _sudo_. Open a new terminal tab and run this command anywhere: 
 ```bash
-npm install -g generator-npm-module
+npm install -g generator-node-app
 ```
 
 ## GitHub
@@ -37,15 +37,14 @@ Select Update
 
 Run the generator:
 ```bash
-yo npm-module 
+yo node-app 
 ```
 Answer a few questions and code away!
 
 ## Local Development
 
-On the command line, from the root of your generator project (in the generator-npm-module/ folder), type:
+On the command line, from the root of your generator project (in the generator-node-app/ folder), type:
 ```bash
 npm link
 ```
-That will install your project dependencies and symlink a global module to your local file. After npm is done, you'll be able to call `yo npm-module` to run the generator.
-
+That will install your project dependencies and symlink a global module to your local file. After npm is done, you'll be able to call `yo node-app` to run the generator.

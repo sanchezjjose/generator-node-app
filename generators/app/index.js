@@ -14,13 +14,13 @@ const github = new GithubApi({
 const QUESTIONS = [
     {
         type: 'input',
-        name: 'module:name',
-        message: 'Module Name (e.g, toggle-button-component)'
+        name: 'app:name',
+        message: 'Node Application Name (no spaces)'
     },
     {   
         type: 'input',
-        name: 'module:description',
-        message: 'Module Description'
+        name: 'app:description',
+        message: 'Node Application Description'
     },
     {
         type: 'input',
@@ -38,12 +38,12 @@ module.exports = class AppGenerator extends Base {
     prompting() {
         const done = this.async();
  
-        this.log(yosay('Welcome to the exciting npm module generator!'));
+        this.log(yosay('Welcome to the exciting node application module generator!'));
         
         this.prompt(QUESTIONS, answers => {
             this.answers = answers;
 
-            const moduleName = answers['module:name'];
+            const moduleName = answers['app:name'];
             const moduleDir = path.join(process.cwd(), moduleName);
             
             mkdirp(moduleName);
@@ -79,8 +79,8 @@ module.exports = class AppGenerator extends Base {
     end() {
         const createRepo = this.answers['repository:create'];
         const githubUser = this.answers['github:user'];
-        const repoName = this.answers['module:name'];
-        const repoDescription = this.answers['module:description'];
+        const repoName = this.answers['app:name'];
+        const repoDescription = this.answers['app:description'];
         const repoUrl = `https://github.com/${githubUser}/${repoName}.git`
         const simpleGit = require('simple-git')('./');
         
@@ -109,7 +109,7 @@ module.exports = class AppGenerator extends Base {
             });
         }
 
-        this.log(chalk.bold.green('Module created successfully'));
+        this.log(chalk.bold.green('Repository created successfully'));
     }
 };
 

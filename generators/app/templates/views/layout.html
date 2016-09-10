@@ -17,26 +17,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">FED Dashboard</a>
+          <a class="navbar-brand" href="/"><%= answers['app:name'] %></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="{{#if active_tab.overview}}active{{/if}}"><a href="/">Overview</a></li>
-            <li class="{{#if active_tab.security_groups}}active{{/if}}"><a href="/securitygroups/{{awsAccount.id}}">Security Groups</a></li>
-            <li class="{{#if active_tab.tags}}active{{/if}}"><a href="/tags/{{awsAccount.id}}">Tags</a></li>
+            <li class="{{#if active_tab.home}}active{{/if}}"><a href="/">Home</a></li>
           </ul>
-          {{#if awsAccounts}}
-          <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accounts<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                {{#each awsAccounts}}
-                  <li><a class='nav-account-id' href='/{{@root.route}}/{{id}}'>{{name}}</a></li>
-                {{/each}}
-              </ul>
-            </li>
-          </ul>
-          {{/if}}
         </div><!--/.nav-collapse -->
       </div><!--/.container-fluid -->
     </nav>

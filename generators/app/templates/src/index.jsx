@@ -14,7 +14,7 @@ const HelloWorldComponent = React.createClass({
 
     loadDataFromServer: function () {
         $.ajax({
-            url: this.props.url,
+            url: '/',
             dataType: 'json',
             type: 'POST',
             data: {
@@ -53,7 +53,7 @@ const HelloWorldComponent = React.createClass({
 });
 
 ReactDOM.render(
-    <HelloWorldComponent url='/' />,
-    document.getElementById('security-groups-component')
+    <HelloWorldComponent/>,
+    document.getElementById('hello-world-component')
 );
 
