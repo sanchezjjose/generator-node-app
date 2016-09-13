@@ -1,0 +1,7 @@
+.DS_Store
+*.swp
+*.log
+node_modules/
+lib/*
+public/javascripts/*.bundle.js
+test-results.xml

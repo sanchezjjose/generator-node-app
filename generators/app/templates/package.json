@@ -22,7 +22,6 @@
   },
   "dependencies": {
     "async": "^1.5.2",
-    "aws-sdk": "~2.3.12",
     "babel-polyfill": "^6.9.0",
     "body-parser": "~1.12.4",
     "bootstrap": "^3.3.6",
@@ -55,7 +54,6 @@
     "babel-preset-react": "^6.5.0",
     "babel-register": "^6.9.0",
     "babelify": "^7.3.0",
-    "bam-eslint-config": "^0.1.9",
     "browserify": "^13.0.1",
     "catw": "~0.2.0",
     "eslint": "^2.13.1",

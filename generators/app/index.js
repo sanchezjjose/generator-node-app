@@ -56,16 +56,23 @@ module.exports = class AppGenerator extends Base {
     }
 
     writing() {
-        this.directory('lib', 'lib');
+        this.directory('bin', 'bin');
+        this.directory('clients', 'clients');
+        this.directory('config', 'config');
+        this.directory('helpers', 'helpers');
+        this.directory('models', 'models');
+        this.directory('public', 'public');
+        this.directory('routes', 'routes');
+        this.directory('src', 'src');
         this.directory('test', 'test');
-        this.directory('eslint', 'eslint');
+        this.directory('views', 'views');
         this.copy('.editorconfig', '.editorconfig');
-        this.copy('.eslintignore', '.eslintignore');
         this.copy('.eslintrc.json', '.eslintrc.json');
         this.copy('.gitignore', '.gitignore');
+        this.copy('app.js', 'app.js');        
+        this.copy('nodemon.json', 'nodemon.json');
         this.copy('package.json', 'package.json');
         this.copy('README.md', 'README.md');
-        this.copy('index.js', 'index.js');        
     
         this.log(chalk.bold.green('Added files and folders to your module.'));
     }

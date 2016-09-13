@@ -1,7 +1,7 @@
 {
-  "name": "generator-npm-module",
+  "name": "generator-node-app",
   "version": "0.0.1",
-  "description": "A generator for npm modules",
+  "description": "A generator for node applications",
   "files": [
     "generators/app"
   ],
@@ -17,4 +17,3 @@
     "yosay": "^1.1.1"
   }
 }
-
