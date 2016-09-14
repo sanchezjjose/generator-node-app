@@ -43,7 +43,7 @@ const HelloWorldComponent = React.createClass({
 
         return (
             <div className='components-container'>
-                <h1>Hello World Component!</h1>
+                <h1>Hello World Component</h1>
                 <div className={loaderClassName}>
                     <FaSpinner className='spin fa fa-3x fa-spin'/> 
                 </div> 

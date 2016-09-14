@@ -52,6 +52,7 @@ app.use('/lib', express.static('lib/'));
 app.use('/dist', express.static('dist/'));
 
 app.use(function(req, res, next) {
+    res.locals.isLoggedIn = !!req.cookies.Authorized;
 	res.locals.Hello = 'Hello';
 	next();
 });
