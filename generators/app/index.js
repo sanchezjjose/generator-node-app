@@ -71,7 +71,7 @@ module.exports = class AppGenerator extends Base {
         this.copy('.gitignore', '.gitignore');
         this.copy('app.js', 'app.js');        
         this.copy('nodemon.json', 'nodemon.json');
-        this.copy('package.json', 'package.json');
+        this.copy('_package.json', 'package.json');
         this.copy('README.md', 'README.md');
     
         this.log(chalk.bold.green('Added files and folders to your module.'));
