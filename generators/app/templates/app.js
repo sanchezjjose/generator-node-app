@@ -48,6 +48,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/css', express.static('node_modules/bootstrap/dist/css'));
 app.use('/js', express.static('node_modules/bootstrap/dist/js'));
+app.use('/fonts', express.static('node_modules/bootstrap/dist/fonts'));
 app.use('/lib', express.static('lib/'));
 app.use('/dist', express.static('dist/'));
 
