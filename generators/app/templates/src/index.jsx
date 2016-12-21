@@ -4,7 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import FaSpinner from '../node_modules/react-icons/lib/fa/spinner';
 
-const HelloWorldComponent = React.createClass({
+const HeaderComponent = React.createClass({
 
     getInitialState: function() {
         return { 
@@ -43,7 +43,7 @@ const HelloWorldComponent = React.createClass({
 
         return (
             <div className='components-container'>
-                <h1>Hello World Component</h1>
+                <h1>Header Component</h1>
                 <div className={loaderClassName}>
                     <FaSpinner className='spin fa fa-3x fa-spin'/> 
                 </div> 
@@ -53,7 +53,7 @@ const HelloWorldComponent = React.createClass({
 });
 
 ReactDOM.render(
-    <HelloWorldComponent/>,
-    document.getElementById('hello-world-component')
+    <HeaderComponent/>,
+    document.getElementById('header-component')
 );
 
