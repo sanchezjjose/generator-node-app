@@ -6,8 +6,8 @@ import ReactDOM from 'react-dom';
 const MainComponent = React.createClass({
 
     getInitialState: function() {
-        return { 
-            // state object here 
+        return {
+            // state object here
         };
     },
 
@@ -24,4 +24,3 @@ ReactDOM.render(
     <MainComponent/>,
     document.getElementById('main-component')
 );
-

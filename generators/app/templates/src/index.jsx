@@ -2,7 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import FaSpinner from '../node_modules/react-icons/lib/fa/spinner';
+import ReactSpinner from '../node_modules/react-icons/lib/fa/spinner';
 
 const HeaderComponent = React.createClass({
 
@@ -45,7 +45,7 @@ const HeaderComponent = React.createClass({
             <div className='components-container'>
                 <h1>Header Component</h1>
                 <div className={loaderClassName}>
-                    <FaSpinner className='spin fa fa-3x fa-spin'/>
+                    <ReactSpinner className='spin fa fa-3x fa-spin'/>
                 </div>
             </div>
         );

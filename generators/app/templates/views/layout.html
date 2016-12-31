@@ -3,6 +3,7 @@
   <head>
     <title>{{title}}</title>
     <link rel='stylesheet' href='/node_modules/bootstrap/dist/css/bootstrap.min.css' />
+    <script src='/node_modules/jquery/dist/jquery.min.js'></script>
   </head>
   <body>
     <!-- Static navbar -->
@@ -37,9 +38,7 @@
         {{/if}}
     </div>
 
-    <script src='/node_modules/jquery/dist/jquery.min.js'></script>
     <script src='/node_modules/bootstrap/dist/js/bootstrap.min.js'></script>
-    <!-- TODO: need separate bundle for each page -->
-    <script src="/dist/app.bundle.js"></script>
+    <script src="/dist/global.bundle.js"></script>
   </body>
 </html>

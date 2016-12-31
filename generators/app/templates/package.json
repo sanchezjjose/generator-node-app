@@ -4,7 +4,7 @@
   "scripts": {
     "debug": "FORCE_HTTPS=true node --inspect bin/www",
     "start": "nodemon bin/www",
-    "start:dev": "FORCE_HTTPS=true nodemon bin/www",
+    "start:dev": "FORCE_HTTPS=true nodemon bin/www & webpack-dev-server",
     "start:production": "NODE_ENV=production FORCE_HTTPS=true node bin/www",
     "stop": "killall node",
     "lint": "eslint src/** src/*/* lib/** lib/*/*",

@@ -8,12 +8,25 @@ const path = require('path');
 module.exports = {
   context: __dirname + "/",
   entry: {
-    app: ["./public/javascripts/global.js", "./src/index.jsx", "./src/components/main.jsx"],
+    global: [
+        "./public/javascripts/global.js",
+    ],
+    indexComponent: [
+        "./src/index.jsx",
+    ],
+    mainComponent: [
+        "./src/components/main.jsx",
+    ]
   },
+  // entry: [
+  //   "./public/javascripts/global.js",
+  //   "./src/index.jsx",
+  //   "./src/components/main.jsx",
+  // ],
   output: {
     path: __dirname + "/dist",
     filename: "[name].bundle.js",
-    publicPath: "/assets",
+    publicPath: "/assets/",
   },
   devServer: {
     contentBase: __dirname + "/",
@@ -23,11 +36,11 @@ module.exports = {
   },
   plugins: [
     // below plugin prevent warnings with React in development. Remove when debugging.
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
-    })
+    // new webpack.DefinePlugin({
+    //   'process.env': {
+    //     // 'NODE_ENV': JSON.stringify('production')
+    //   }
+    // })
   ],
   module: {
     rules: [
