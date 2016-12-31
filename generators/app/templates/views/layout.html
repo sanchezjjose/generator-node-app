@@ -2,9 +2,7 @@
 <html>
   <head>
     <title>{{title}}</title>
-    <link rel='stylesheet' href='/css/bootstrap.min.css' />
-    <link rel='stylesheet' href='/dist/css/style.min.css' />
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+    <link rel='stylesheet' href='/node_modules/bootstrap/dist/css/bootstrap.min.css' />
   </head>
   <body>
     <!-- Static navbar -->
@@ -39,7 +37,9 @@
         {{/if}}
     </div>
 
-    <script src='/js/bootstrap.min.js'></script>
-    <script src='/javascripts/global.js'></script>
+    <script src='/node_modules/jquery/dist/jquery.min.js'></script>
+    <script src='/node_modules/bootstrap/dist/js/bootstrap.min.js'></script>
+    <!-- TODO: need separate bundle for each page -->
+    <script src="/dist/app.bundle.js"></script>
   </body>
 </html>

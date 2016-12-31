@@ -20,7 +20,6 @@ var hbs = handlebars.create({
         dir: path.join(__dirname, 'views')
     }],
     helpers : {
-
         // TODO: move this to separate middleware
         'json': function(context) {
             return JSON.stringify(context);
@@ -46,8 +45,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/css', express.static('node_modules/bootstrap/dist/css'));
-app.use('/js', express.static('node_modules/bootstrap/dist/js'));
+app.use('/node_modules', express.static('node_modules'));
 app.use('/fonts', express.static('node_modules/bootstrap/dist/fonts'));
 app.use('/lib', express.static('lib/'));
 app.use('/dist', express.static('dist/'));

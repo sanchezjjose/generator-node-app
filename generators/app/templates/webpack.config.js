@@ -8,7 +8,7 @@ const path = require('path');
 module.exports = {
   context: __dirname + "/",
   entry: {
-    app: "./public/javascripts/global.js",
+    app: ["./public/javascripts/global.js", "./src/index.jsx", "./src/components/main.jsx"],
   },
   output: {
     path: __dirname + "/dist",
@@ -21,17 +21,27 @@ module.exports = {
   resolve: {
     modules: [path.resolve(__dirname, "public/javascripts"), "node_modules"]
   },
+  plugins: [
+    // below plugin prevent warnings with React in development. Remove when debugging.
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    })
+  ],
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
         use: [{
           loader: "babel-loader",
-          options: { presets: ["es2015"] }
+          options: { presets: ["es2015", "react"] }
         }],
       },
       {
         test: /\.less$/,
+        exclude: /node_modules/,
         // this actually bundles your CSS in with your bundled JavaScript,
         // and style-loader manually writes your styles to the <head>.
         // You’ve saved a header request—saving valuable time on some connections—and
