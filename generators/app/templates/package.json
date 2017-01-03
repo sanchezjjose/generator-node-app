@@ -6,6 +6,7 @@
     "start": "nodemon bin/www",
     "start:dev": "FORCE_HTTPS=true nodemon bin/www & webpack-dev-server",
     "start:production": "NODE_ENV=production FORCE_HTTPS=true node bin/www",
+    "watch": "webpack --progress --watch",
     "stop": "killall node",
     "lint": "eslint src/** src/*/* lib/** lib/*/*",
     "test": "multi='xunit=test-results.xml spec=-' mocha --recursive -R mocha-multi",

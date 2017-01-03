@@ -3,7 +3,10 @@
 const webpack = require("webpack");
 const path = require('path');
 
-// credit: https://blog.madewithenvy.com/getting-started-with-webpack-2-ed2b86c68783#.bgqss0jav
+// credits:
+// https://blog.madewithenvy.com/getting-started-with-webpack-2-ed2b86c68783#.bgqss0jav
+// https://webpack.js.org/configuration
+// https://webpack.js.org/guides/hmr-react/
 
 module.exports = {
   context: __dirname + "/",
@@ -32,7 +35,10 @@ module.exports = {
     contentBase: __dirname + "/",
   },
   resolve: {
-    modules: [path.resolve(__dirname, "public/javascripts"), "node_modules"]
+    modules: [
+      path.resolve(__dirname,
+      "public/javascripts"), "node_modules"
+    ]
   },
   plugins: [
     // below plugin prevent warnings with React in development. Remove when debugging.
@@ -65,4 +71,5 @@ module.exports = {
       // Loaders for other file types can go here
     ],
   },
+  devtool: "cheap-eval-source-map",
 };
