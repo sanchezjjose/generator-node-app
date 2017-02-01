@@ -12,7 +12,8 @@ const App = React.createClass({
     },
 
     loadDataFromServer: function () {
-        console.log($.ajax);
+        console.log('Loading data from server...');
+        // console.log($.ajax !== undefined);
 
         // $.ajax({
         //     url: '/',

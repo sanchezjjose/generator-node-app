@@ -2,9 +2,9 @@
   "name": "node-react-app",
   "version": "0.0.1",
   "scripts": {
-    "debug": "FORCE_HTTPS=true node --inspect bin/www",
+    "debug": "node --inspect bin/www",
     "start": "nodemon bin/www",
-    "start:dev": "FORCE_HTTPS=true nodemon bin/www & webpack-dev-server",
+    "start:dev": "nodemon bin/www & webpack-dev-server",
     "start:production": "NODE_ENV=production FORCE_HTTPS=true node bin/www",
     "watch": "webpack --progress --watch",
     "stop": "killall node",
