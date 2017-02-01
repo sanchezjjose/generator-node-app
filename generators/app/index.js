@@ -66,6 +66,7 @@ module.exports = class AppGenerator extends Base {
         this.directory('src', 'src');
         this.directory('test', 'test');
         this.directory('views', 'views');
+        this.copy('.babelrc', '.babelrc');
         this.copy('.editorconfig', '.editorconfig');
         this.copy('.eslintrc.json', '.eslintrc.json');
         this.copy('.gitignore', '.gitignore');

@@ -10,66 +10,88 @@ const path = require('path');
 
 module.exports = {
   context: __dirname + "/",
-  entry: {
-    global: [
-        "./public/javascripts/global.js",
-    ],
-    indexComponent: [
-        "./src/index.jsx",
-    ],
-    mainComponent: [
-        "./src/components/main.jsx",
-    ]
-  },
-  // entry: [
-  //   "./public/javascripts/global.js",
-  //   "./src/index.jsx",
-  //   "./src/components/main.jsx",
-  // ],
+
+  entry: [
+    'react-hot-loader/patch',
+    // activate HMR for React
+
+    'webpack-dev-server/client?http://localhost:8080',
+    // bundle the client for webpack-dev-server
+    // and connect to the provided endpoint
+
+    'webpack/hot/only-dev-server',
+    // bundle the client for hot reloading
+    // only- means to only hot reload for successful updates
+
+    './public/javascripts/global.js',
+    // the entry point of our app
+
+    './src/index.js',
+    // the entry point of our app
+  ],
+
   output: {
     path: __dirname + "/dist",
     filename: "[name].bundle.js",
-    publicPath: "/assets/",
+    // publicPath: "/assets/",
+    publicPath: "/",
   },
+
+  // context: path.resolve(__dirname, 'src'),
+
+  devtool: 'inline-source-map',
+
   devServer: {
-    contentBase: __dirname + "/",
+    hot: true,
+    // enable HMR on the server
+
+    contentBase: path.resolve(__dirname, 'dist'),
+    // match the output path
+
+    publicPath: '/'
+    // match the output `publicPath`
   },
+
   resolve: {
     modules: [
       path.resolve(__dirname,
       "public/javascripts"), "node_modules"
     ]
   },
-  plugins: [
-    // below plugin prevent warnings with React in development. Remove when debugging.
-    // new webpack.DefinePlugin({
-    //   'process.env': {
-    //     // 'NODE_ENV': JSON.stringify('production')
-    //   }
-    // })
-  ],
+
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
         use: [{
           loader: "babel-loader",
           options: { presets: ["es2015", "react"] }
         }],
+        exclude: /node_modules/,
       },
       {
         test: /\.less$/,
-        exclude: /node_modules/,
         // this actually bundles your CSS in with your bundled JavaScript,
         // and style-loader manually writes your styles to the <head>.
         // You’ve saved a header request—saving valuable time on some connections—and
         // if you’re loading your DOM with JavaScript anyway, this essentially eliminates FOUC on its own.
         // loaders are processed in reverse array order. That means css-loader will run before style-loader.
-        use: ["style-loader", "css-loader", "less-loader"],
+        use: [
+          "style-loader",
+          "css-loader",
+          "less-loader"
+        ],
+        exclude: /node_modules/,
       },
       // Loaders for other file types can go here
     ],
   },
-  devtool: "cheap-eval-source-map",
+
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    // enable HMR globally
+
+    new webpack.NamedModulesPlugin(),
+    // prints more readable module names in the browser console on HMR updates
+  ],
 };
