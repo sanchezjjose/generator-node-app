@@ -33,8 +33,8 @@ module.exports = {
   output: {
     path: __dirname + "/dist",
     filename: "[name].bundle.js",
-    // publicPath: "/assets/",
-    publicPath: "/",
+    publicPath: "/static/",
+    // publicPath: "/",
   },
 
   // context: path.resolve(__dirname, 'src'),
@@ -48,7 +48,8 @@ module.exports = {
     contentBase: path.resolve(__dirname, 'dist'),
     // match the output path
 
-    publicPath: '/'
+    publicPath: '/static'
+    // publicPath: '/'
     // match the output `publicPath`
   },
 

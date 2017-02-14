@@ -4,7 +4,7 @@
   "scripts": {
     "debug": "node --inspect bin/www",
     "start": "nodemon bin/www",
-    "start:dev": "nodemon bin/www & webpack-dev-server",
+    "start:dev": "nodemon bin/www",
     "start:production": "NODE_ENV=production FORCE_HTTPS=true node bin/www",
     "watch": "webpack --progress --watch",
     "stop": "killall node",
@@ -50,7 +50,7 @@
     "react-hot-loader": "^3.0.0-beta.6",
     "sinon": "^1.17.4",
     "style-loader": "^0.13.1",
-    "webpack": "^2.1.0-beta.25",
-    "webpack-dev-server": "^2.1.0-beta.0"
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0"
   }
 }
