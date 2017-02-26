@@ -6,21 +6,20 @@ import { AppContainer } from 'react-hot-loader';
 
 import App from './components/App';
 
-const render = (Component, containerId) => {
+const render = (Component) => {
   ReactDOM.render(
     <AppContainer>
       <Component/>
     </AppContainer>,
-    document.getElementById(containerId)
+    document.getElementById('app-component')
   );
 };
 
-render(App, 'app-component');
+render(App);
 
 // Hot Module Replacement API
 if (module.hot) {
   module.hot.accept('./components/App', () => {
-    const NewApp = require('./components/App').default;
-    render(NewApp, 'app-component');
+    render(App);
   });
 }
