@@ -59,6 +59,7 @@ module.exports = class AppGenerator extends Base {
         this.directory('bin', 'bin');
         this.directory('clients', 'clients');
         this.directory('config', 'config');
+        this.directory('dist', 'dist');
         this.directory('helpers', 'helpers');
         this.directory('models', 'models');
         this.directory('public', 'public');
@@ -74,6 +75,7 @@ module.exports = class AppGenerator extends Base {
         this.copy('nodemon.json', 'nodemon.json');
         this.copy('_package.json', 'package.json');
         this.copy('README.md', 'README.md');
+        this.copy('webpack.config.js', 'webpack.config.js');
     
         this.log(chalk.bold.green('Added files and folders to your module.'));
     }
