@@ -1,10 +1,6 @@
 import React from 'react';
 import styles from './App.less';
 import ChildComponent from './childComponent';
-import jQuery from '../../node_modules/jquery/dist/jquery.min.js';
-
-// TODO: remove this hacky workaround
-let $ = $ || jQuery;
 
 const App = React.createClass({
 
@@ -15,20 +11,23 @@ const App = React.createClass({
     loadDataFromServer: function () {
         console.log('Loading data from server...');
 
-        $.ajax({
-            url: '/',
-            dataType: 'json',
-            type: 'POST',
-            data: {
-                // data variables here
-            },
-            success: data => {
-                console.log('success: ', data);
-            },
-            error: (xhr, status, err) => {
-                console.log('error: ', xhr, status, err);
-                console.error(this.props.url, status, xhr.responseText, err.toString());
+        fetch('/', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
             }
+        }).then(response => {
+            if (response.status >= 200 && response.status < 300) {
+              return response.json();
+            } else {
+              const error = new Error(response.statusText);
+              error.response = response;
+              throw error;
+            }
+        }).then(result => {
+            console.log(result.message); 
+        }).catch(error => {
+            console.log(error); 
         });
     },
 
