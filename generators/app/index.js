@@ -69,7 +69,7 @@ module.exports = class AppGenerator extends Base {
         this.directory('views', 'views');
         this.copy('.babelrc', '.babelrc');
         this.copy('.editorconfig', '.editorconfig');
-        this.copy('.eslintrc.json', '.eslintrc.json');
+        this.copy('.eslintrc', '.eslintrc');
         this.copy('.gitignore', '.gitignore');
         this.copy('app.js', 'app.js');        
         this.copy('nodemon.json', 'nodemon.json');
